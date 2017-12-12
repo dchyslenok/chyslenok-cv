@@ -41,11 +41,10 @@ class App extends Component {
             </Grid.Column>
             <Grid.Column width={6} only='computer'>
               <Segment style={{ height: '600px', paddingRight: 0}}>
-                  <Scrollbars
+                <Scrollbars
                     autoHide
                     renderView={props => <div {...props} className="scrollbar-view"/>}
                   >
-
                     <Route exact path="/" component={About}/>
                     <Route path="/resume" component={Resume}/>
                     <Route path="/contact" component={Contact}/>

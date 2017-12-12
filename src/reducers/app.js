@@ -9,10 +9,12 @@ const initialState = {
       skype: null,
       email: null,
       skills: [],
-      services: []
+      services: [],
+      socials: [],
     },
     resume: {
-
+      experience: [],
+      education: [],
     },
     contact: {
 

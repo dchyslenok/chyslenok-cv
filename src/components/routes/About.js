@@ -9,7 +9,11 @@ class About extends Component {
 
 
   renderAboutMe() {
-    const { name, age, phone, skype, email } = this.props.about;
+    const { name, yearBorn, phone, skype, email } = this.props.about;
+
+    const dateNow = new Date();
+    const yearNow = dateNow.getFullYear();
+    const age = (yearNow - yearBorn) || null;
 
     return (
       <Grid textAlign="left" style={{ width: '100%', padding: 10 }}>
@@ -75,8 +79,8 @@ class About extends Component {
         <Grid.Row>
           <Grid.Column>
             <Image.Group size='mini'>
-              {skills.map((items) =>
-                <Image src={items.src}/>
+              {skills.map((items, index) =>
+                <Image key={`skill${index}`} src={items.src}/>
               )}
             </Image.Group>
           </Grid.Column>
@@ -95,8 +99,8 @@ class About extends Component {
             <Header size="large">My Services</Header>
           </Grid.Column>
         </Grid.Row>
-        {services.map((item) =>
-          <Grid.Row>
+        {services.map((item, index) =>
+          <Grid.Row key={`service${index}`}>
             <Grid.Column style={{ width: '100%' }}>
               <Header size="medium">{item.title}</Header>
               <Header.Subheader>

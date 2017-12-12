@@ -39,20 +39,10 @@ class NavigateMenu extends Component {
           <Icon name='briefcase'/>
           Resume
         </Menu.Item>
-
-        <Menu.Item
-          name='/contact'
-          active={activePage === '/contact'}
-          onClick={this.handleItemClick}
-        >
-          <Icon name='talk'/>
-          Contact
-        </Menu.Item>
       </Menu>
     );
   }
 }
-
 
 const mapStateProps = (state) => {
   return {
