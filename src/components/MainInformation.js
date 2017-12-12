@@ -21,17 +21,16 @@ class MainInformation extends Component {
           <Grid.Row>
             <Grid.Column>
               <Header as='h2'>
-                Chyslenok Dmitry
+                Test
                 <Header.Subheader>
-                  Full Stack Developer
+                  Test
                 </Header.Subheader>
               </Header>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia
-              deserunt ebdmollit anim id est laborum. Sed ut perspiciatis unde omnis iste.
+              Test
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
