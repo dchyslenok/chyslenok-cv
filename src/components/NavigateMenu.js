@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { Icon, Menu } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { push } from 'react-router-redux'
+import { push } from 'react-router-redux';
 
 class NavigateMenu extends Component {
-
   static propTypes = {
     activePage: PropTypes.string.isRequired,
+    onNavigate: PropTypes.func.isRequired,
   };
 
   handleItemClick = (e, { name }) => {
@@ -23,20 +23,19 @@ class NavigateMenu extends Component {
     return (
       <Menu icon="labeled" vertical style={{ height: '600px', width: '95px' }}>
         <Menu.Item
-          name='/'
+          name="/"
           active={activePage === '/'}
           onClick={this.handleItemClick}
         >
-          <Icon name='id card outline'/>
+          <Icon name="id card outline" />
           About
         </Menu.Item>
-
         <Menu.Item
-          name='/resume'
+          name="/resume"
           active={activePage === '/resume'}
           onClick={this.handleItemClick}
         >
-          <Icon name='briefcase'/>
+          <Icon name="briefcase" />
           Resume
         </Menu.Item>
       </Menu>

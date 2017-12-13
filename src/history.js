@@ -1,5 +1,5 @@
-import createBrowserHistory from 'history/createBrowserHistory'
+import createBrowserHistory from 'history/createBrowserHistory';
 
 const history = createBrowserHistory();
-window.routerHistory = history
-export default history
+
+export default history;

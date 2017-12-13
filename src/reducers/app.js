@@ -27,9 +27,7 @@ const init = (state, action) => ({
   profile: { ...action.profileData },
 });
 
-
 const app = (state = initialState, action = {}) => {
-  console.log('action.type', action.type);
   switch (action.type) {
     case actionTypes.INIT: return init(state, action);
     default: return state;
@@ -37,3 +35,4 @@ const app = (state = initialState, action = {}) => {
 };
 
 export default app;
+

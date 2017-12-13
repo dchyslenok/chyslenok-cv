@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Button, Grid, Header, Image, Segment } from 'semantic-ui-react';
-
+import { Grid, Header, Image } from 'semantic-ui-react';
 
 class About extends Component {
-  static propTypes = {};
-
+  static propTypes = {
+    about: PropTypes.object.isRequired,
+  };
 
   renderAboutMe() {
     const { name, yearBorn, phone, skype, email } = this.props.about;
@@ -71,16 +71,18 @@ class About extends Component {
 
     return (
       <Grid textAlign="left" style={{ width: '100%', padding: 10 }}>
+
         <Grid.Row>
           <Grid.Column>
             <Header size="large">Skills</Header>
           </Grid.Column>
         </Grid.Row>
+
         <Grid.Row>
           <Grid.Column>
-            <Image.Group size='mini'>
+            <Image.Group size="mini">
               {skills.map((items, index) =>
-                <Image key={`skill${index}`} src={items.src}/>
+                <Image key={`skill${index}`} src={items.src} />
               )}
             </Image.Group>
           </Grid.Column>
@@ -94,21 +96,25 @@ class About extends Component {
 
     return (
       <Grid textAlign="left" style={{ width: '100%', padding: 10 }}>
+
         <Grid.Row>
           <Grid.Column>
             <Header size="large">My Services</Header>
           </Grid.Column>
         </Grid.Row>
-        {services.map((item, index) =>
-          <Grid.Row key={`service${index}`}>
-            <Grid.Column style={{ width: '100%' }}>
-              <Header size="medium">{item.title}</Header>
-              <Header.Subheader>
-                {item.content}
-              </Header.Subheader>
-            </Grid.Column>
-          </Grid.Row>
-        )}
+
+        {services.map((item, index) => {
+          return (
+            <Grid.Row key={`service${index}`}>
+              <Grid.Column style={{ width: '100%' }}>
+                <Header size="medium">{item.title}</Header>
+                <Header.Subheader>
+                  {item.content}
+                </Header.Subheader>
+              </Grid.Column>
+            </Grid.Row>
+          );
+        })}
       </Grid>
     );
   }
@@ -120,7 +126,7 @@ class About extends Component {
         {this.renderSkills()}
         {this.renderMyServices()}
       </div>
-    )
+    );
   }
 }
 
@@ -129,6 +135,5 @@ const mapStateProps = (state) => {
     about: state.app.profile.about,
   };
 };
-
 
 export default connect(mapStateProps, null)(About);

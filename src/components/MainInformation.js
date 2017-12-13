@@ -30,16 +30,16 @@ class MainInformation extends Component {
     const { avatar, name, position, shortDescription } = this.props.about;
 
     return (
-      <Segment className="profile-details">
+      <Segment style={{ height: '600px' }}>
         <Grid textAlign="center">
           <Grid.Row>
-            <Grid.Column className="profile-avatar-container">
+            <Grid.Column style={{ paddingTop: '30px' }}>
               <Image
-                className="profile-avatar"
+                style={{ width: '250px' }}
                 src={avatar}
                 size="medium"
-                avatar
                 bordered
+                avatar
               />
             </Grid.Column>
           </Grid.Row>
