@@ -1,27 +1,51 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Button, Grid, Header, Image, Segment} from 'semantic-ui-react';
+import { Button, Grid, Header, Image, Segment } from 'semantic-ui-react';
 
 class MainInformation extends Component {
-  static propTypes = {};
+  static propTypes = {
+    about: PropTypes.object.isRequired,
+  };
+
+  renderSocialContacts = () => {
+    const { socials } = this.props.about;
+
+    return (socials.map((item, index) => {
+      return (
+        <Button
+          as="a"
+          target="_blank"
+          key={`social${index}`}
+          href={item.src}
+          color={item.color}
+          icon={item.icon}
+          circular
+        />
+      );
+    }));
+  };
 
   render() {
-    const { avatar, name, position, shortDescription, socials } = this.props.about;
+    const { avatar, name, position, shortDescription } = this.props.about;
 
     return (
-      <Segment style={{ height: '600px' }}>
-        <Grid textAlign='center'>
+      <Segment className="profile-details">
+        <Grid textAlign="center">
           <Grid.Row>
-            <Grid.Column style={{ paddingTop: '30px' }}>
-              <Image style={{ width: '250px' }}
-                     src={avatar}
-                     size='medium' avatar bordered/>
+            <Grid.Column className="profile-avatar-container">
+              <Image
+                className="profile-avatar"
+                src={avatar}
+                size="medium"
+                avatar
+                bordered
+              />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <Header as='h2'>
+              <Header as="h2">
                 {name}
                 <Header.Subheader>
                   {position}
@@ -36,22 +60,12 @@ class MainInformation extends Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              {socials.map((item, index) =>
-                <Button
-                  as="a"
-                  key={`social${index}`}
-                  href={item.src}
-                  target="_blank"
-                  color={item.color}
-                  icon={item.icon}
-                  circular
-                />
-              )}
+              {this.renderSocialContacts()}
             </Grid.Column>
           </Grid.Row>
         </Grid>
       </Segment>
-    )
+    );
   }
 }
 

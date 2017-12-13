@@ -18,3 +18,28 @@ body > div > div > div.login-form {
 .scrollbar-view {
     margin-bottom: -17px !important;
 }
+
+.vcard-container {
+    height: 100%;
+}
+
+.vcard-container-menu {
+    width: 90px;
+}
+
+.vcard-main-content {
+    height: 600px;
+    padding-right: 0;
+}
+
+.profile-details {
+    height: 600px;
+}
+
+.profile-avatar-container {
+    padding-top: 30px;
+}
+
+.profile-avatar {
+    width: 250px;
+}

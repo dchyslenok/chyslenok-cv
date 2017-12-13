@@ -21,7 +21,7 @@ class NavigateMenu extends Component {
     const { activePage } = this.props;
 
     return (
-      <Menu icon='labeled' vertical style={{ height: '600px', width: '95px' }}>
+      <Menu icon="labeled" vertical style={{ height: '600px', width: '95px' }}>
         <Menu.Item
           name='/'
           active={activePage === '/'}
