@@ -1,5 +1,5 @@
 import actionTypes from './actionTypes';
-import profileData from '../profile';
+import profileData from '../defaultProfile';
 
 const init = () => ({
   type: actionTypes.INIT,
