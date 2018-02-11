@@ -9,11 +9,7 @@ class About extends Component {
   };
 
   renderAboutMe() {
-    const { name, yearBorn, phone, skype, email } = this.props.about;
-
-    const dateNow = new Date();
-    const yearNow = dateNow.getFullYear();
-    const age = (yearNow - yearBorn) || null;
+    const { name, age, phone, skype, email } = this.props.about;
 
     return (
       <Grid textAlign="left" style={{ width: '100%', padding: 10 }}>
@@ -124,7 +120,6 @@ class About extends Component {
       <div>
         {this.renderAboutMe()}
         {this.renderSkills()}
-        {this.renderMyServices()}
       </div>
     );
   }

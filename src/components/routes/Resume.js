@@ -21,6 +21,8 @@ class Resume extends Component {
               centered
             />
             <br />
+            <span>{item.position}</span>
+            <br />
             <span>{item.period}</span>
           </Grid.Column>
           <Grid.Column style={{ width: '60%' }}>
